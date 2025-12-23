@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -29,12 +29,19 @@ export function ContactSection() {
             href="mailto:hrishikesh@example.com"
             className="inline-block text-[clamp(1.5rem,4vw,2.5rem)] font-medium text-[var(--text-secondary)] hover:text-gradient transition-all duration-300"
           >
-            hrishikesh@example.com
+            hrishikeshprasadc@gmail.com
           </a>
+          {/* <br />
+          <a
+            href="mailto:hrishikesh@example.com"
+            className="inline-block text-[clamp(1.5rem,2vw,2rem)] font-medium text-[var(--text-secondary)] hover:text-gradient transition-all duration-300"
+          >
+            +91-9809582131
+          </a> */}
 
           <div className="flex items-center justify-center gap-8 pt-8">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/hr-ishi94"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -45,7 +52,7 @@ export function ContactSection() {
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/hrishikesh-prasad-c/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -56,7 +63,18 @@ export function ContactSection() {
             </motion.a>
 
             <motion.a
-              href="mailto:hrishikesh@example.com"
+              href="https://www.instagram.com/hrishi.dev_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-4 rounded-full backdrop-blur-sm bg-white/5 dark:bg-black/10 border border-neutral-200/20 dark:border-neutral-800/20 hover:border-primary-teal/50 transition-colors duration-300"
+            >
+              <Instagram className="w-6 h-6 text-[var(--text-secondary)]" />
+            </motion.a>
+
+            <motion.a
+              href="mailto:hrishikeshprasadc@gmail.com"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className="p-4 rounded-full backdrop-blur-sm bg-white/5 dark:bg-black/10 border border-neutral-200/20 dark:border-neutral-800/20 hover:border-primary-teal/50 transition-colors duration-300"
@@ -73,7 +91,10 @@ export function ContactSection() {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-sm text-[var(--text-secondary)] pt-16"
         >
-          2024 — Designed & Developed with intention
+          Designed with intention. Engineered for impact.
+          <br/>
+          <br/>
+          © 2024 Hrishikesh Prasad C
         </motion.p>
       </div>
     </section>

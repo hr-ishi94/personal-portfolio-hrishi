@@ -1,27 +1,31 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const chapters = [
   {
     title: "The Path Not Taken",
-    content: "BTech in Mechanical Engineering. Stability. A government job. These were the expectations, not the dreams. I followed the path others carved, cleared exam stages, but failed at the final hurdle. Depression crept in. I settled for a production engineer role, knowing deep down it wasn't me.",
-    highlight: false
+    content:
+      "BTech in Mechanical Engineering. Stability. A government job. These were the expectations, not the dreams. I followed the path others carved, cleared exam stages, but failed at the final hurdle. Depression crept in. I settled for a production engineer role, knowing deep down it wasn't me.",
+    highlight: true,
   },
   {
     title: "The Awakening",
-    content: "One day, I discovered Brototype's 100K coding challenge. A tutorial so clear that even a child could understand. Something clicked. The fear I'd carried dissolved with each concept grasped. For the first time, problem-solving felt like art.",
-    highlight: true
+    content:
+      "One day, I randomly tried out a coding challenge tutorial. A tutorial so clear that even a child could understand. Something clicked. The fear I'd carried dissolved with each concept grasped. For the first time, problem-solving felt like art.",
+    highlight: true,
   },
   {
     title: "The Commitment",
-    content: "Brocamp became my crucible. LeetCode became my daily ritual. 300+ problems solved. Not because I had to, but because I couldn't stop. Consistency transformed terror into mastery. Every solution was proof—this was where I belonged.",
-    highlight: false
+    content:
+      "Internship became my crucible. LeetCode became my daily ritual. 400+ problems solved. Not because I had to, but because I couldn't stop. Consistency transformed terror into mastery. Every solution was proof—this was where I belonged.",
+    highlight: true,
   },
   {
     title: "The Arrival",
-    content: "I'm on the right path now. With a vision for the next five years. Building systems, solving problems, creating impact. The mechanical engineer who was afraid of code is now designing solutions at scale.",
-    highlight: true
-  }
+    content:
+      "I'm on the right path now. With a vision for the Future. Building systems, solving problems, creating impact. The mechanical engineer who was afraid of code is now designing solutions at scale.",
+    highlight: true,
+  },
 ];
 
 export function TransitionSection() {
@@ -43,7 +47,8 @@ export function TransitionSection() {
             to Direction
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mt-8">
-            A story of fear, discovery, and the unexpected path to becoming a developer.
+            A story of fear, discovery, and the unexpected path to becoming a
+            developer.
           </p>
         </motion.div>
 
@@ -59,15 +64,16 @@ export function TransitionSection() {
 
 function Chapter({
   chapter,
-//   index
-}: {
-  chapter: typeof chapters[0];
-//   index: number;
+  index
+}: 
+{
+  chapter: (typeof chapters)[0];
+    index: number;
 }) {
   const chapterRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: chapterRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
@@ -79,9 +85,10 @@ function Chapter({
       style={{ opacity, y }}
       className={`py-16 border-l-2 ${
         chapter.highlight
-          ? 'border-primary-teal pl-8'
-          : 'border-neutral-200/30 dark:border-neutral-800/30 pl-8'
+          ? "border-primary-teal pl-8"
+          : "border-neutral-200/30 dark:border-neutral-800/30 pl-8"
       }`}
+      key={index}
     >
       <motion.h3
         initial={{ opacity: 0 }}
@@ -89,7 +96,7 @@ function Chapter({
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className={`text-[clamp(1.75rem,5vw,2.5rem)] font-headline leading-tight tracking-tight mb-6 ${
-          chapter.highlight ? 'text-gradient' : 'text-[var(--text-primary)]'
+          chapter.highlight ? "text-gradient" : "text-[var(--text-primary)]"
         }`}
       >
         {chapter.title}
