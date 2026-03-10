@@ -14,7 +14,7 @@ function App() {
 
       <HeroSection />
       <NarrativeSection />
-      <TransitionSection />
+      {/* <TransitionSection /> */}
       <WorkSection />
       <ExperienceSection />
       <SkillsSection />

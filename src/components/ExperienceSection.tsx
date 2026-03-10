@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
 const experiences = [
-  {
-    company: "ThinkXLabs",
-    role: "Co-Founder",
-    period: "2025 Dec — Present"
-  },
+  // {
+  //   company: "ThinkXLabs",
+  //   role: "Co-Founder",
+  //   period: "2025 Dec — Present"
+  // },
   {
     company: "Bpract Software Solutions LLP",
     role: "Frontend Developer",
