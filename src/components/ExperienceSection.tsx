@@ -13,7 +13,7 @@ const experiences = [
   },
   {
     company: "Your Extreme Solutions",
-    role: "Full Stack Developer",
+    role: "Frontend Developer",
     period: "2024 Jan — 2025 April"
   },
   {
