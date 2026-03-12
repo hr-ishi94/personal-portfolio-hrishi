@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import FloatingLines from './FloatingLines';
 
 const statements = [
   "I build real-world systems.",
@@ -9,9 +10,20 @@ const statements = [
 ];
 
 export function NarrativeSection() {
+  const containerRef = useRef<HTMLElement>(null);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-32 px-8">
-      <div className="max-w-6xl mx-auto space-y-24">
+    <section ref={containerRef} className="relative min-h-screen flex items-center justify-center py-32 px-8 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
+        <FloatingLines
+          linesGradient={['#476EAE', '#48B3AF', '#A7E399']}
+          parallax={true}
+          interactive={true}
+          eventSource={containerRef as React.MutableRefObject<HTMLElement>}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto space-y-24 pointer-events-none">
         {statements.map((statement, index) => (
           <NarrativeText key={index} statement={statement} index={index} />
         ))}
