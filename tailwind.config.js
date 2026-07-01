@@ -21,8 +21,8 @@ export default {
         'gradient-dark': 'linear-gradient(135deg, rgba(71, 110, 174, 0.2) 0%, rgba(72, 179, 175, 0.2) 50%, rgba(167, 227, 153, 0.2) 100%)',
       },
       fontFamily: {
-        headline: ['Inter', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        headline: ['Syne', 'system-ui', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'editorial-xl': ['8rem', { lineHeight: '0.9', letterSpacing: '-0.02em' }],

@@ -30,7 +30,7 @@ const chapters = [
 
 export function TransitionSection() {
   return (
-    <section className="relative py-32 px-8 overflow-hidden">
+    <section id="transition" className="relative py-32 px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
