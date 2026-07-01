@@ -58,16 +58,28 @@ export function WorkSection() {
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (sliderRef.current) {
-      const scrollAmount = sliderRef.current.clientWidth * 0.8;
-      sliderRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
+      const card = sliderRef.current.firstElementChild as HTMLElement;
+      if (card) {
+        const cardWidth = card.offsetWidth;
+        const style = window.getComputedStyle(sliderRef.current);
+        const gap = parseFloat(style.columnGap || style.gap || '0') || 24;
+        const scrollAmount = cardWidth + gap;
+        sliderRef.current.scrollBy({
+          left: direction === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+      } else {
+        const scrollAmount = sliderRef.current.clientWidth * 0.8;
+        sliderRef.current.scrollBy({
+          left: direction === 'left' ? -scrollAmount : scrollAmount,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
   return (
-    <section id="work" className="relative py-32 px-6 md:px-8 overflow-hidden">
+    <section id="work" className="relative py-20 md:py-24 px-6 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         
         {/* Header row with arrows */}
@@ -120,7 +132,7 @@ export function WorkSection() {
         {/* Slidable Cards Slider */}
         <div
           ref={sliderRef}
-          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 -mx-6 px-6 md:-mx-8 md:px-8"
+          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-6 pb-8 -mx-6 px-6 md:-mx-8 md:px-8"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
@@ -131,7 +143,6 @@ export function WorkSection() {
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -73,7 +73,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32 overflow-hidden bg-slate-950/[0.01] dark:bg-black/20">
+    <section id="contact" className="relative flex flex-col items-center justify-center px-6 py-20 md:py-24 overflow-hidden bg-slate-950/[0.01] dark:bg-black/20">
       
       {/* Background glow shadow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-blue-teal rounded-full blur-3xl opacity-10 pointer-events-none" />

@@ -5,7 +5,7 @@ export function ResumeSection() {
   const resumeUrl = "/Hrishikesh_Prasad_C_Full_Stack_Engineer.pdf";
 
   return (
-    <section id="resume" className="relative py-32 px-6 md:px-8">
+    <section id="resume" className="relative py-20 md:py-24 px-6 md:px-8">
       {/* Visual background elements */}
       <div className="absolute inset-0 bg-gradient-dark opacity-[var(--gradient-opacity)] pointer-events-none" />
       

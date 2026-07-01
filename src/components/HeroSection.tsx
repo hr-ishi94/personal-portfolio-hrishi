@@ -52,12 +52,12 @@ export function HeroSection() {
       {/* Aesthetic Grid Pattern Background Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:44px_44px] dark:bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_90%)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 py-24 md:py-32 w-full">
+      <div className="relative z-10 max-w-7xl mt-10 mx-auto px-6 md:px-8 py-16 md:py-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           
           {/* Left Side: Typography & CTAs */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -68,7 +68,7 @@ export function HeroSection() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-teal"></span>
               </span>
               Available for new projects
-            </motion.div>
+            </motion.div> */}
 
             <div className="space-y-4">
               <motion.h1 

@@ -28,7 +28,7 @@ export function NarrativeSection() {
   const containerRef = useRef<HTMLElement>(null);
 
   return (
-    <section id="narrative" ref={containerRef} className="relative min-h-screen flex items-center justify-center py-40 px-6 md:px-8 overflow-hidden bg-slate-950/[0.02] dark:bg-black/10">
+    <section id="narrative" ref={containerRef} className="relative flex items-center justify-center py-20 md:py-24 px-6 md:px-8 overflow-hidden bg-slate-950/[0.02] dark:bg-black/10">
       
       {/* Background radial glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-blue/5 to-transparent pointer-events-none" />

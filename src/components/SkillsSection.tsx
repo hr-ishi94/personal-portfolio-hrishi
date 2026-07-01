@@ -62,7 +62,7 @@ const skillCategories = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-32 px-6 md:px-8 overflow-hidden">
+    <section id="skills" className="relative py-20 md:py-24 px-6 md:px-8 overflow-hidden">
       
       {/* Background Gradient Blend */}
       <div
