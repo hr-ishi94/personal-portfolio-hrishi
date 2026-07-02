@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 import dino from "../assets/dino.png";
 import pomoDino from "../assets/pomo-dino.png";
 import nikeClone from "../assets/nike-clone.png";
@@ -162,8 +162,10 @@ const getTechDotColor = (tech: string) => {
 };
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[480px] flex-shrink-0 snap-start flex flex-col space-y-6 group">
+    <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[480px] flex-shrink-0 snap-start flex flex-col space-y-6 group transition-all duration-300 hover:-translate-y-1">
       {/* Image Showcase Panel */}
       <div className="relative cursor-pointer w-full">
         {/* Glow backdrop shadow */}
@@ -225,10 +227,24 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </div>
 
         {/* Description */}
-        <div className="pl-4 border-l border-primary-teal dark:border-primary-teal/40 py-1">
-          <p className="text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed font-light line-clamp-3">
+        <div className="pl-4 border-l border-primary-teal dark:border-primary-teal/40 py-1 flex flex-col items-start gap-2">
+          <p className={`text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed font-light transition-all duration-300 ${isExpanded ? '' : 'line-clamp-3'}`}>
             {project.description}
           </p>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="inline-flex items-center gap-1 text-[10px] font-bold text-primary-teal hover:text-primary-blue hover:underline transition-all duration-200 focus:outline-none"
+          >
+            {isExpanded ? (
+              <>
+                Show Less <ChevronUp className="w-3 h-3" />
+              </>
+            ) : (
+              <>
+                Read More <ChevronDown className="w-3 h-3" />
+              </>
+            )}
+          </button>
         </div>
 
         {/* Tech Stack */}
@@ -273,4 +289,5 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
     </div>
   );
 }
+
 
