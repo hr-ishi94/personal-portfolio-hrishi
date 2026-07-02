@@ -5,48 +5,48 @@ const experiences = [
   {
     company: "Bpract Software Solutions LLP",
     role: "Frontend Developer",
-    period: "2025 April — Present",
+    period: "Apr 2025 — Present · Kozhikode, India",
     bullets: [
-      "Engineering robust UI architectures and responsive layouts using React, Next.js, and TypeScript.",
-      "Optimizing web applications for Core Web Vitals (LCP, INP), resulting in improved performance metrics.",
-      "Collaborating with backend engineers to integrate RESTful APIs, securing state management structures."
+      "Built a React.js e-commerce platform (1,000+ products) with Redux Toolkit — lifted Lighthouse score from 54 → 91 via code splitting and lazy loading.",
+      "Architected a TypeScript component library from Figma to production, cutting feature dev time by ~40% across a 4-engineer team.",
+      "Wrote Jest + RTL tests achieving >80% coverage on core dashboards; led code reviews that reduced PR cycle time by 30%."
     ]
   },
   {
     company: "Your Extreme Solutions",
-    role: "Frontend Developer",
-    period: "2024 Jan — 2025 April",
+    role: "Frontend Developer · Freelance",
+    period: "Nov 2023 — Apr 2025 · Remote",
     bullets: [
-      "Designed and developed highly interactive client dashboards and SaaS applications using React and Tailwind CSS.",
-      "Implemented accessibility guidelines (WCAG) ensuring web platforms are accessible to all user demographics.",
-      "Conducted code reviews, streamlined Git workflow standards, and refactored legacy systems for cleaner codebases."
+      "Delivered React / TypeScript UIs for 3+ client projects — code splitting and lazy loading cut initial load time by ~35%.",
+      "Built a shared component library that enforced brand consistency and reduced per-project UI build time across engagements.",
+      "Integrated JWT-secured REST APIs with Redux state management, delivering role-based UI flows across multiple user types."
     ]
   },
   {
     company: "Brototype",
     role: "Full Stack Developer Intern",
-    period: "2023 Aug — 2024 Jan",
+    period: "Jul 2023 — Nov 2023 · Kozhikode, India",
     bullets: [
-      "Developed web applications from database schemas to interactive frontends using Python, Django, and React.",
-      "Engineered real-time features using WebSockets and Django Channels for communication components.",
-      "Mastered data structures and algorithms, solving over 400 LeetCode problems as part of daily technical drills."
+      "Built full-stack features with React, Django REST, and PostgreSQL — from zero prior coding experience to production code in 5 months.",
+      "Engineered real-time communication components via WebSockets and Django Channels.",
+      "Transitioned directly into a freelance Frontend Developer role upon programme completion."
     ]
   },
   {
     company: "VKC Group, India",
     role: "Production Engineer",
-    period: "2021 Aug — 2023 Aug",
+    period: "Jul 2021 — Jul 2023 · Kerala, India",
     bullets: [
-      "Optimized production processes, oversaw quality control pipelines, and supervised mechanical operations.",
-      "Analyzed efficiency metrics to minimize operational downtime and streamline factory throughput.",
-      "Pivot to software engineering driven by a passion for systematic problem-solving and web technologies."
+      "Managed large-scale manufacturing operations — built strong analytical thinking and systematic problem-solving skills.",
+      "Resolved recurring production inefficiencies through data-driven root cause analysis — now applied to frontend debugging.",
+      "Left voluntarily to pursue a self-funded career transition into software engineering via Brototype."
     ]
   }
 ];
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="relative py-20 md:py-24 px-6 md:px-8">
+    <section id="experience" className="relative pt-8 pb-20 md:pt-12 md:pb-24 px-6 md:px-8">
       <div className="max-w-5xl mx-auto">
         
         {/* Section Title */}

@@ -79,69 +79,65 @@ export function WorkSection() {
   };
 
   return (
-    <section id="work" className="relative py-20 md:py-24 px-6 md:px-8 overflow-hidden">
+    <section id="work" className="relative pt-12 pb-8 md:pt-16 md:pb-10 px-6 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         
-        {/* Header row with arrows */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-xl"
-          >
-            <h2 className="text-[clamp(3rem,8vw,5.5rem)] font-headline font-extrabold leading-[0.9] tracking-tight mb-4 text-[var(--text-primary)]">
-              Selected
-              <br />
-              <span className="text-gradient">Work</span>
-            </h2>
-            <p className="text-[var(--text-secondary)] text-base md:text-lg font-light leading-relaxed">
-              A curated selection of projects demonstrating full-stack engineering expertise, interactive interfaces, and robust systems architecture.
-            </p>
-          </motion.div>
-
-          {/* Slider Navigation Arrows */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3 self-start md:self-end select-none"
-          >
-            <button
-              onClick={() => handleScroll('left')}
-              className="w-11 h-11 rounded-full border border-neutral-300/30 dark:border-white/10 flex items-center justify-center bg-white/50 dark:bg-slate-950/20 backdrop-blur-md hover:border-primary-teal/40 hover:text-primary-teal hover:scale-105 active:scale-95 transition-all duration-300 pointer-events-auto"
-              aria-label="Previous Slide"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 18 9 12 15 6"></polyline>
-              </svg>
-            </button>
-            <button
-              onClick={() => handleScroll('right')}
-              className="w-11 h-11 rounded-full border border-neutral-300/30 dark:border-white/10 flex items-center justify-center bg-white/50 dark:bg-slate-950/20 backdrop-blur-md hover:border-primary-teal/40 hover:text-primary-teal hover:scale-105 active:scale-95 transition-all duration-300 pointer-events-auto"
-              aria-label="Next Slide"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-          </motion.div>
-        </div>
-
-        {/* Slidable Cards Slider */}
-        <div
-          ref={sliderRef}
-          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-6 pb-8 -mx-6 px-6 md:-mx-8 md:px-8 scroll-pl-6 md:scroll-pl-8"
-          style={{ 
-            scrollbarWidth: 'none', 
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          }}
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-xl mb-12 md:mb-16"
         >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
+          <h2 className="text-[clamp(3rem,8vw,5.5rem)] font-headline font-extrabold leading-[0.9] tracking-tight mb-4 text-[var(--text-primary)]">
+            Selected
+            <br />
+            <span className="text-gradient">Work</span>
+          </h2>
+          <p className="text-[var(--text-secondary)] text-base md:text-lg font-light leading-relaxed">
+            A curated selection of projects demonstrating full-stack engineering expertise, interactive interfaces, and robust systems architecture.
+          </p>
+        </motion.div>
+
+        {/* Carousel with flanking arrows */}
+        <div className="relative">
+          {/* Left Arrow */}
+          <button
+            onClick={() => handleScroll('left')}
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-20 w-10 h-10 rounded-full items-center justify-center bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-white/10 shadow-md hover:border-primary-teal/50 hover:text-primary-teal hover:scale-110 active:scale-95 transition-all duration-300 select-none"
+            aria-label="Previous Slide"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          {/* Slidable Cards */}
+          <div
+            ref={sliderRef}
+            className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-6 pb-8 -mx-6 px-6 md:-mx-8 md:px-8 scroll-pl-6 md:scroll-pl-8"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} index={index} />
+            ))}
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() => handleScroll('right')}
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-20 w-10 h-10 rounded-full items-center justify-center bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-white/10 shadow-md hover:border-primary-teal/50 hover:text-primary-teal hover:scale-110 active:scale-95 transition-all duration-300 select-none"
+            aria-label="Next Slide"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
     </section>

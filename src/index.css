@@ -11,6 +11,9 @@
   --card-bg: rgba(255, 255, 255, 0.6);
   --card-border: rgba(15, 23, 42, 0.06);
   --glow-color: rgba(71, 110, 174, 0.08);
+  --gradient-start: #3b6bb8;
+  --gradient-middle: #2d8c89;
+  --gradient-end: #3b8e28;
 }
 
 .dark {
@@ -22,6 +25,9 @@
   --card-bg: rgba(16, 22, 38, 0.6);
   --card-border: rgba(255, 255, 255, 0.06);
   --glow-color: rgba(72, 179, 175, 0.25);
+  --gradient-start: #588bd8;
+  --gradient-middle: #48B3AF;
+  --gradient-end: #76d061;
 }
 
 html {
@@ -58,10 +64,20 @@ body {
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #588bd8 0%, #48B3AF 50%, #76d061 100%);
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-stroke-theme {
+    -webkit-text-stroke: 1px rgba(15, 23, 42, 0.2);
+    filter: drop-shadow(0 4px 12px rgba(71, 110, 174, 0.12));
+  }
+
+  .dark .text-stroke-theme {
+    -webkit-text-stroke: 1px rgba(248, 250, 252, 0.25);
+    filter: drop-shadow(0 0 20px rgba(72, 179, 175, 0.25));
   }
 
   .animate-gradient {

@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ParallaxBackground } from './ParallaxBackground';
 import portrait from '../assets/portrait-without-background.png';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import djangoIcon from '../assets/django.jpg';
 import jsIcon from '../assets/js.webp';
 import nextjsIcon from '../assets/nextjs.png';
@@ -79,7 +79,7 @@ export function HeroSection() {
               >
                 Full Stack
                 <br />
-                <span className="text-gradient">Developer</span>
+                <span className="text-gradient text-stroke-theme">Developer</span>
               </motion.h2>
             </div>
 
@@ -99,11 +99,11 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="flex gap-4 pt-2"
             >
-              <div className="flex-1 max-w-[160px] px-5 py-4 rounded-2xl border border-neutral-200/10 dark:border-white/5 bg-slate-500/5 dark:bg-white/[0.01] backdrop-blur-md text-left">
+              <div className="flex-1 max-w-[160px] px-5 py-4 rounded-2xl glassmorphic text-left">
                 <p className="text-2xl font-extrabold text-[var(--text-primary)] font-headline leading-none">3+</p>
                 <p className="text-[9px] font-bold text-[var(--text-secondary)] tracking-wider uppercase mt-1.5">Years Experience</p>
               </div>
-              <div className="flex-1 max-w-[160px] px-5 py-4 rounded-2xl border border-neutral-200/10 dark:border-white/5 bg-slate-500/5 dark:bg-white/[0.01] backdrop-blur-md text-left">
+              <div className="flex-1 max-w-[160px] px-5 py-4 rounded-2xl glassmorphic text-left">
                 <p className="text-2xl font-extrabold text-[var(--text-primary)] font-headline leading-none">15+</p>
                 <p className="text-[9px] font-bold text-[var(--text-secondary)] tracking-wider uppercase mt-1.5">Projects Shipped</p>
               </div>
@@ -188,7 +188,7 @@ export function HeroSection() {
               {/* Floating Console Window: STACK OVERVIEW (translateZ: 95px for high-depth overlap) */}
               <div
                 style={{ transform: 'translateZ(95px)' }}
-                className="absolute -bottom-8 -left-6 md:-left-12 lg:-left-16 z-20 w-[220px] md:w-[245px] p-4 rounded-2xl border border-neutral-200/30 dark:border-white/10 bg-white/60 dark:bg-slate-950/40 backdrop-blur-xl shadow-2xl text-left pointer-events-none"
+                className="absolute -bottom-8 left-2 md:-left-12 lg:-left-16 z-20 w-[220px] md:w-[245px] p-4 rounded-2xl border border-neutral-200/30 dark:border-white/10 bg-white/90 dark:bg-slate-950/85 backdrop-blur-xl shadow-2xl text-left pointer-events-none"
               >
                 {/* Header Dots */}
                 <div className="flex items-center gap-1.5 pb-2.5 border-b border-neutral-200/10 dark:border-white/5 mb-3">
@@ -231,7 +231,7 @@ export function HeroSection() {
                 </div>
 
                 {/* Window Footer */}
-                <div className="flex items-center justify-between mt-3.5 pt-2 border-t border-neutral-200/10 dark:border-white/5 text-[8px] font-extrabold tracking-widest text-slate-500 dark:text-slate-400 uppercase select-none">
+                <div className="flex items-center justify-between mt-3.5 pt-2 border-t border-neutral-200/10 dark:border-white/5 text-[8px] font-extrabold tracking-widest text-slate-700 dark:text-slate-300 uppercase select-none">
                   <span>Stack Overview</span>
                   <svg className="w-3.5 h-3.5 animate-[spin_10s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <circle cx="12" cy="12" r="3" />
@@ -243,7 +243,7 @@ export function HeroSection() {
               {/* Floating Info Tag Card (translateZ: 70px) */}
               <div
                 style={{ transform: 'translateZ(70px)' }}
-                className="absolute bottom-16 -right-6 md:-right-12 lg:-right-16 z-20 w-[190px] p-3 rounded-2xl border border-neutral-200/30 dark:border-white/10 bg-white/60 dark:bg-slate-950/40 backdrop-blur-xl shadow-xl flex items-center gap-2.5 pointer-events-none text-left"
+                className="absolute bottom-16 right-2 md:-right-12 lg:-right-16 z-20 w-[190px] p-3 rounded-2xl border border-neutral-200/30 dark:border-white/10 bg-white/90 dark:bg-slate-950/85 backdrop-blur-xl shadow-xl flex items-center gap-2.5 pointer-events-none text-left"
               >
                 <div className="p-2 rounded-xl bg-gradient-to-br from-primary-blue to-primary-teal text-white shadow-md">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -253,7 +253,7 @@ export function HeroSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[7.5px] font-extrabold tracking-widest text-slate-500 dark:text-slate-400 uppercase select-none leading-none">Focus Area</p>
+                  <p className="text-[7.5px] font-extrabold tracking-widest text-slate-700 dark:text-slate-300 uppercase select-none leading-none">Focus Area</p>
                   <p className="text-[10px] font-bold text-[var(--text-primary)] mt-0.5 leading-tight">Next.js & Django REST</p>
                 </div>
               </div>
