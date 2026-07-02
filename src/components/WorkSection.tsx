@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import dino from "../assets/dino.png";
@@ -132,7 +132,7 @@ export function WorkSection() {
         {/* Slidable Cards Slider */}
         <div
           ref={sliderRef}
-          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-6 pb-8 -mx-6 px-6 md:-mx-8 md:px-8"
+          className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pt-6 pb-8 -mx-6 px-6 md:-mx-8 md:px-8 scroll-pl-6 md:scroll-pl-8"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
@@ -163,9 +163,9 @@ const getTechDotColor = (tech: string) => {
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   return (
-    <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[480px] flex-shrink-0 snap-start flex flex-col space-y-6">
+    <div className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[480px] flex-shrink-0 snap-start flex flex-col space-y-6 group">
       {/* Image Showcase Panel */}
-      <div className="relative group cursor-pointer w-full">
+      <div className="relative cursor-pointer w-full">
         {/* Glow backdrop shadow */}
         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary-blue via-primary-teal to-primary-mint opacity-5 group-hover:opacity-10 blur-lg transition-opacity duration-500 pointer-events-none" />
         
@@ -185,7 +185,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             <img
               src={project.image}
               alt={project.title}
-              className={`w-full h-full object-contain rounded-lg transition-all duration-700 ease-out group-hover:scale-[1.02] ${
+              className={`w-full h-full object-contain rounded-lg transition-transform duration-700 ease-out group-hover:scale-[1.03] ${
                 project.status === 'coming_soon' ? 'opacity-40 blur-[2px] grayscale-[40%]' : ''
               }`}
             />
@@ -219,14 +219,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             )}
           </div>
           
-          <h3 className="text-xl md:text-2xl font-headline font-bold leading-tight text-[var(--text-primary)]">
+          <h3 className="text-xl md:text-2xl font-headline font-bold leading-tight text-[var(--text-primary)] group-hover:text-gradient transition-all duration-300">
             {project.title}
           </h3>
         </div>
 
         {/* Description */}
         <div className="pl-4 border-l border-primary-teal dark:border-primary-teal/40 py-1">
-          <p className="text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed font-light line-clamp-3 hover:line-clamp-none transition-all duration-300">
+          <p className="text-xs md:text-sm text-[var(--text-secondary)] leading-relaxed font-light line-clamp-3">
             {project.description}
           </p>
         </div>
@@ -273,3 +273,4 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
     </div>
   );
 }
+

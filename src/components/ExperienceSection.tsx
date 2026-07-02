@@ -57,7 +57,7 @@ export function ExperienceSection() {
           transition={{ duration: 0.8 }}
           className="mb-24"
         >
-          <h2 className="text-[clamp(2.5rem,7vw,4rem)] font-headline font-extrabold leading-[0.9] tracking-tight mb-2">
+          <h2 className="text-[clamp(2.25rem,6vw,4rem)] font-headline font-extrabold leading-[0.9] tracking-tight mb-2">
             Professional
             <br />
             <span className="text-gradient">Journey</span>
